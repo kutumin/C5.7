@@ -4,17 +4,10 @@ const url = 'https://picsum.photos/103/102'
 
 const btn = document.querySelector('.button');
 
-btn.addEventListener('click', () => {
-    fetch('https://picsum.photos/103/102')
-    .then((response) => {
-        console.log('response', response);
-        const result = response.json();
-        console.log('result', result);
-        return result;
-        img.src=result.url;
-    })
-    .then((data) => {
-        console.log(data);
-    })
-    .catch(() => { console.log('error') });
-});
+btn.addEventListener('click', async() => {
+    let response = await fetch(url);
+    let blob = await response.blob();
+    let img = document.createElement('img');
+    document.body.append(img);
+    img.src = URL.createObjectURL(blob);
+  });
