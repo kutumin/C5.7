@@ -29,7 +29,6 @@
 }
 
 .card-image {
-  display: block;
   width: 200px;
   height: 150px;
 }
@@ -37,4 +36,3 @@
 .image{
   margin: 0 0;
 }
-  
