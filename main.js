@@ -4,9 +4,11 @@ const btn = document.querySelector('.button');
 const previousimage = localStorage.getItem('previousimage');
 
 document.addEventListener('DOMContentLoaded', () =>{
+    if (previousimage){
     var url = localStorage.getItem('previousimage');
         console.log(url);
         useRequest(url,displayResult);
+    }
     });
 
 function useRequest(url, callback) {
